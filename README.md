@@ -163,3 +163,42 @@ After building, the `dist` folder contains:
 - `index.cjs.js` - CommonJS version
 - `index.d.ts` - TypeScript declarations
 - `index.css` - Combined CSS including tokens and component styles
+
+## Publishing
+
+This library is published to npm using GitHub Actions when a new release is created.
+
+### Publishing Process
+
+1. Update the version in `package.json` using semantic versioning
+
+   ```bash
+   # For patch updates (bug fixes)
+   pnpm version patch
+
+   # For minor updates (new features, backward compatible)
+   pnpm version minor
+
+   # For major updates (breaking changes)
+   pnpm version major
+   ```
+
+2. Push changes to GitHub including the version tag
+
+   ```bash
+   git push --follow-tags
+   ```
+
+3. Create a new release on GitHub
+   - Go to the repository's Releases page
+   - Click "Draft a new release"
+   - Select the version tag (should match package.json version)
+   - Add release notes describing the changes
+   - Publish the release
+
+4. The GitHub Actions workflow will automatically:
+   - Verify the tag version matches package.json version
+   - Install dependencies
+   - Run tests
+   - Build the package
+   - Publish to npm registry
