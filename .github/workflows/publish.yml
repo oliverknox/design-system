@@ -27,19 +27,17 @@ jobs:
         with:
           run_install: false
 
-      - name: Extract version from tag
-        id: get_version
+      - name: Check version mismatch
         run: |
-          VERSION=${GITHUB_REF#refs/tags/v}
-          echo "version=$VERSION" >> $GITHUB_OUTPUT
-          echo "Extracted version: $VERSION"
+          TAG_VERSION=${GITHUB_REF#refs/tags/v}
+          PKG_VERSION=$(node -p "require('./package.json').version")
+          echo "Tag version: $TAG_VERSION"
+          echo "Package.json version: $PKG_VERSION"
 
-      - name: Update package.json version
-        run: |
-          git config --local user.email "hi@oliverknox.co"
-          git config --local user.name "Oliver Knox"
-          pnpm version ${{ steps.get_version.outputs.version }} --no-git-tag-version
-          git push
+          if [ "$TAG_VERSION" != "$PKG_VERSION" ]; then
+            echo "❌ Version mismatch between tag and package.json"
+            exit 1
+          fi
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
