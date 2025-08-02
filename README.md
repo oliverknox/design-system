@@ -31,6 +31,8 @@ The architecture implements a unidirectional dependency flow, where higher-level
 ```bash
 # Install dependencies
 pnpm install
+# Install Playwright browsers for Storybook tests
+pnpm exec playwright install --with-deps
 
 # Start Storybook development server
 pnpm storybook
