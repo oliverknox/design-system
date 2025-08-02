@@ -1,0 +1,102 @@
+button.base {
+    all: unset;
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+    transition: all 200ms ease;
+}
+button.base:disabled {
+    pointer-events: none;
+}
+button.base p {
+    all: unset;
+    font-family: var(--font-family);
+    font-weight: var(--font-weight-bold);
+    color: var(--semantic-color-base);
+    text-align: center;
+}
+
+button.small {
+    font-size: var(--font-size-small);
+    padding: var(--spacing-tiny) var(--spacing-small);
+    border: var(--offset-tiny) solid var(--semantic-color-base);
+    box-shadow: var(--offset-small) var(--offset-small) 0 0 var(--semantic-color-base);
+}
+button.small:hover {
+    box-shadow: var(--offset-tiny) var(--offset-tiny) 0 0 var(--semantic-color-base);
+    transform: translate(var(--offset-tiny), var(--offset-tiny));
+}
+
+button.medium {
+    font-size: var(--font-size-medium);
+    padding: var(--spacing-small) var(--spacing-medium);
+    border: var(--offset-small) solid var(--semantic-color-base);
+    box-shadow: var(--offset-medium) var(--offset-medium) 0 0 var(--semantic-color-base);
+}
+button.medium:hover {
+    box-shadow: var(--offset-small) var(--offset-small) 0 0 var(--semantic-color-base);
+    transform: translate(var(--offset-small), var(--offset-small));
+}
+
+button.large {
+    font-size: var(--font-size-large);
+    padding: var(--spacing-medium) var(--spacing-large);
+    border: var(--offset-medium) solid var(--semantic-color-base);
+    box-shadow: var(--offset-large) var(--offset-large) 0 0 var(--semantic-color-base);
+}
+button.large:hover {
+    box-shadow: var(--offset-medium) var(--offset-medium) 0 0 var(--semantic-color-base);
+    transform: translate(var(--offset-medium), var(--offset-medium));
+}
+
+button.info {
+    background: var(--semantic-color-info-base);
+}
+button.info:hover {
+    background: var(--semantic-color-info-emphasis);
+}
+button.info:active {
+    background: var(--semantic-color-info-strong);
+}
+button.info:disabled {
+    background: var(--semantic-color-info-muted);
+}
+
+button.positive {
+    background: var(--semantic-color-positive-base);
+}
+button.positive:hover {
+    background: var(--semantic-color-positive-emphasis);
+}
+button.positive:active {
+    background: var(--semantic-color-positive-strong);
+}
+button.positive:disabled {
+    background: var(--semantic-color-positive-muted);
+}
+
+button.warning {
+    background: var(--semantic-color-warning-base);
+}
+button.warning:hover {
+    background: var(--semantic-color-warning-emphasis);
+}
+button.warning:active {
+    background: var(--semantic-color-warning-strong);
+}
+button.warning:disabled {
+    background: var(--semantic-color-warning-muted);
+}
+
+button.danger {
+    background: var(--semantic-color-danger-base);
+}
+button.danger:hover {
+    background: var(--semantic-color-danger-emphasis);
+}
+button.danger:active {
+    background: var(--semantic-color-danger-strong);
+}
+button.danger:disabled {
+    background: var(--semantic-color-danger-muted);
+}

@@ -1,0 +1,11 @@
+:root {
+    --spacing-tiny: 1rem;
+    --spacing-small: 1.5rem;
+    --spacing-medium: 3rem;
+    --spacing-large: 6rem;
+
+    --offset-tiny: 0.2rem;
+    --offset-small: 0.4rem;
+    --offset-medium: 0.6rem;
+    --offset-large: 0.8rem;
+}
