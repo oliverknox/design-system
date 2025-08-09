@@ -1,0 +1,75 @@
+label.base input {
+    --box-shadow-color: var(--semantic-color-base);
+
+    all: unset;
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+    transition: all 200ms ease;
+    font-family: var(--font-family);
+    color: var(--semantic-color-base);
+    text-align: start;
+}
+label.base input:disabled {
+    --box-shadow-color: var(--semantic-color-base-muted);
+
+    pointer-events: none;
+    border-color: var(--semantic-color-base-muted);
+    color: var(--semantic-color-base-muted);
+}
+label.base input:focus-visible {
+    border-color: var(--semantic-color-accessible-base);
+}
+label.base {
+    all: unset;
+    font-family: var(--font-family);
+    font-weight: var(--font-weight-bold);
+    color: var(--semantic-color-base);
+    text-align: center;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+label.base:not(:has(input:required)) span.required {
+    display: none;
+}
+
+label.base:has(input:required) span.required {
+    display: inline;
+    color: var(--semantic-color-danger-base);
+}
+label.base:has(input:disabled) {
+    color: var(--semantic-color-base-muted);
+}
+
+label.small input {
+    font-size: var(--font-size-small);
+    padding: var(--spacing-tiny);
+    border: var(--offset-tiny) solid var(--semantic-color-base);
+    box-shadow: var(--offset-small) var(--offset-small) 0 0 var(--box-shadow-color);
+}
+label.small input:focus {
+    box-shadow: var(--offset-tiny) var(--offset-tiny) 0 0 var(--box-shadow-color);
+    transform: translate(var(--offset-tiny), var(--offset-tiny));
+}
+label.small {
+    padding: 0 var(--spacing-tiny);
+    font-size: var(--font-size-small);
+}
+
+label.medium input {
+    font-size: var(--font-size-medium);
+    padding: var(--spacing-small);
+    border: var(--offset-small) solid var(--semantic-color-base);
+    box-shadow: var(--offset-medium) var(--offset-medium) 0 0 var(--box-shadow-color);
+}
+label.medium input:focus {
+    box-shadow: var(--offset-small) var(--offset-small) 0 0 var(--box-shadow-color);
+    transform: translate(var(--offset-small), var(--offset-small));
+}
+label.medium {
+    padding: 0 var(--spacing-small);
+    font-size: var(--font-size-medium);
+}

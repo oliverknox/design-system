@@ -19,6 +19,9 @@
     --semantic-color-danger-strong: #ff1f44;
     --semantic-color-danger-muted: #f4b6b6;
 
+    --semantic-color-accessible-base: #b6d100;
+
     --semantic-color-base: #000000;
+    --semantic-color-base-muted: #b8b8b8;
     --semantic-color-base-contrast: #ffffff;
 }

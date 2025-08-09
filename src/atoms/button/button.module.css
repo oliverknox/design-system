@@ -1,4 +1,6 @@
 button.base {
+    --box-shadow-color: var(--semantic-color-base);
+
     all: unset;
     position: relative;
     cursor: pointer;
@@ -6,7 +8,16 @@ button.base {
     transition: all 200ms ease;
 }
 button.base:disabled {
+    --box-shadow-color: var(--semantic-color-base-muted);
+
     pointer-events: none;
+    border-color: var(--semantic-color-base-muted);
+}
+button.base:disabled p {
+    color: var(--semantic-color-base-muted);
+}
+button.base:focus-visible {
+    border-color: var(--semantic-color-accessible-base);
 }
 button.base p {
     all: unset;
@@ -20,10 +31,11 @@ button.small {
     font-size: var(--font-size-small);
     padding: var(--spacing-tiny) var(--spacing-small);
     border: var(--offset-tiny) solid var(--semantic-color-base);
-    box-shadow: var(--offset-small) var(--offset-small) 0 0 var(--semantic-color-base);
+    box-shadow: var(--offset-small) var(--offset-small) 0 0 var(--box-shadow-color);
 }
-button.small:hover {
-    box-shadow: var(--offset-tiny) var(--offset-tiny) 0 0 var(--semantic-color-base);
+button.small:hover,
+button.small:focus {
+    box-shadow: var(--offset-tiny) var(--offset-tiny) 0 0 var(--box-shadow-color);
     transform: translate(var(--offset-tiny), var(--offset-tiny));
 }
 
@@ -31,10 +43,11 @@ button.medium {
     font-size: var(--font-size-medium);
     padding: var(--spacing-small) var(--spacing-medium);
     border: var(--offset-small) solid var(--semantic-color-base);
-    box-shadow: var(--offset-medium) var(--offset-medium) 0 0 var(--semantic-color-base);
+    box-shadow: var(--offset-medium) var(--offset-medium) 0 0 var(--box-shadow-color);
 }
-button.medium:hover {
-    box-shadow: var(--offset-small) var(--offset-small) 0 0 var(--semantic-color-base);
+button.medium:hover,
+button.medium:focus {
+    box-shadow: var(--offset-small) var(--offset-small) 0 0 var(--box-shadow-color);
     transform: translate(var(--offset-small), var(--offset-small));
 }
 
@@ -42,10 +55,11 @@ button.large {
     font-size: var(--font-size-large);
     padding: var(--spacing-medium) var(--spacing-large);
     border: var(--offset-medium) solid var(--semantic-color-base);
-    box-shadow: var(--offset-large) var(--offset-large) 0 0 var(--semantic-color-base);
+    box-shadow: var(--offset-large) var(--offset-large) 0 0 var(--box-shadow-color);
 }
-button.large:hover {
-    box-shadow: var(--offset-medium) var(--offset-medium) 0 0 var(--semantic-color-base);
+button.large:hover,
+button.large:focus {
+    box-shadow: var(--offset-medium) var(--offset-medium) 0 0 var(--box-shadow-color);
     transform: translate(var(--offset-medium), var(--offset-medium));
 }
 
